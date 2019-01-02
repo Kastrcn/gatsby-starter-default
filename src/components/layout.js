@@ -82,7 +82,7 @@ class layout extends React.Component {
                             {this.state.open ? <ExpandLess/> : <ExpandMore/>}
                         </ListItem>
                         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-                            {[['CSS 使用', `css`], ['LAYOUT', `layout`], ['DATA', `data`], ['My Files', `my-files`], ['MD', `md`], ['slu', `slu`]].map((text, index) => (
+                            {[['CSS 使用', `css`], ['布局', `layout`], ['GraphQL', `data`], ['本地文件', `my-files`], ['Markdown', `md`], ['目录', `slu`]].map((text, index) => (
                                 <Link to={text[1]} key={index} style={{textDecoration: `none`}}>
                                     <ListItem button>
                                         <ListItemText inset primary={text[0]}/>
@@ -91,6 +91,8 @@ class layout extends React.Component {
                                 </Link>
                             ))}
                         </Collapse>
+
+
 
                     </List>
 

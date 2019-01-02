@@ -14,10 +14,10 @@ export default ({ data }) => {
             border-bottom: 1px solid;
           `}
                 >
-                    Amazing Pandas Eating Things
+                    gatsbyjs 使用教程
                 </h1>
-                <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
+
                     <div key={node.id}>
                         <Link
                             to={node.fields.slug}
@@ -38,9 +38,10 @@ export default ({ data }) => {
                     color: #bbb;
                   `}
                                 >
-                  — {node.frontmatter.date}
                 </span>
                             </h3>
+
+
                             <p>{node.excerpt}</p>
                         </Link>
                     </div>
@@ -52,7 +53,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [fileAbsolutePath] }) {
       totalCount
       edges {
         node {
