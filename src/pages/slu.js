@@ -37,7 +37,7 @@ export default ({ data }) => {
                                     css={css`
                     color: #bbb;
                   `}
-                                >
+                                >  — {node.frontmatter.date}
                 </span>
                             </h3>
 
