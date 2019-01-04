@@ -48,12 +48,18 @@ class layout extends React.Component {
     }
 
     state = {
-        open: true,
+        open: false,
+        open1: true,
     };
 
     handleClick = () => {
         this.setState(state => ({open: !state.open}));
     };
+
+    handleClick1 = () => {
+        this.setState(state => ({open1: !state.open1}));
+    };
+
 
     render() {
         const {classes, children} = {...this.props};
@@ -91,9 +97,20 @@ class layout extends React.Component {
                                 </Link>
                             ))}
                         </Collapse>
+                        <ListItem button onClick={this.handleClick1}>
+                            <ListItemText  primary="django"/>
+                            {this.state.open1 ? <ExpandLess/> : <ExpandMore/>}
+                        </ListItem>
+                        <Collapse in={this.state.open1} timeout="auto" unmountOnExit>
+                            {[['Object-relational mapper', `css`], ['URLs and views', `layout`], ['Templates', `data`], ['Forms', `my-files`], ['Authentication', `md`], ['Internationalization', `slu`], ['Security', `slu`], ['Admin', `slu`]].map((text, index) => (
+                                <Link to={text[1]} key={index} style={{textDecoration: `none`}}>
+                                    <ListItem button>
+                                        <ListItemText inset primary={text[0]}/>
+                                    </ListItem>
 
-
-
+                                </Link>
+                            ))}
+                        </Collapse>
                     </List>
 
                 </Drawer>
