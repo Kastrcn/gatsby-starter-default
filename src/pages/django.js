@@ -14,7 +14,7 @@ export default ({ data }) => {
             border-bottom: 1px solid;
           `}
                 >
-                    gatsbyjs 使用教程
+                    Django 使用教程
                 </h1>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
 
@@ -53,7 +53,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/gatsby//"}}, sort: {fields: [fileAbsolutePath]}) {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Django/"}}, sort: {fields: [fileAbsolutePath]}) {
     totalCount
     edges {
       node {
@@ -63,7 +63,6 @@ export const query = graphql`
           date(formatString: "DD MMMM, YYYY")
           _PARENT
         }
-        fileAbsolutePath
         fields {
           slug
         }

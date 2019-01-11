@@ -97,20 +97,17 @@ class layout extends React.Component {
                                 </Link>
                             ))}
                         </Collapse>
-                        <ListItem button onClick={this.handleClick1}>
-                            <ListItemText  primary="django"/>
-                            {this.state.open1 ? <ExpandLess/> : <ExpandMore/>}
-                        </ListItem>
-                        <Collapse in={this.state.open1} timeout="auto" unmountOnExit>
-                            {[['Object-relational mapper', `css`], ['URLs and views', `layout`], ['Templates', `data`], ['Forms', `my-files`], ['Authentication', `md`], ['Internationalization', `slu`], ['Security', `slu`], ['Admin', `slu`],['Plugin', `slu`]].map((text, index) => (
+
+                            {/*[['Object-relational mapper', `css`], ['URLs and views', `layout`], ['Templates', `data`], ['Forms', `my-files`], ['Authentication', `md`], ['Internationalization', `slu`], ['Security', `slu`], ['Admin', `slu`],['Plugin', `slu`]]*/}
+                            {[['django', `django`]].map((text, index) => (
                                 <Link to={text[1]} key={index} style={{textDecoration: `none`}}>
                                     <ListItem button>
-                                        <ListItemText inset primary={text[0]}/>
+                                        <ListItemText  primary={text[0]}/>
                                     </ListItem>
 
                                 </Link>
                             ))}
-                        </Collapse>
+
                     </List>
 
                 </Drawer>
