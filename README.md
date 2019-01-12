@@ -5,4 +5,5 @@
 *  添加django目录
 *  修改css使用md
 *  添加django ORM
+*  添加QuerySet
 ----------------
