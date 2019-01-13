@@ -6,4 +6,5 @@
 *  修改css使用md
 *  添加django ORM
 *  添加QuerySet
+*  安装djangorestframework
 ----------------
