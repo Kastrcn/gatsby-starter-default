@@ -93,6 +93,45 @@ class Person(models.Model):
 
 ```
 
+## 表关系
+
+一对多关联
+
+```python
+class BookInfo(models.Model):
+    pass
+#定义英雄模型类HeroInfo
+class HeroInfo(models.Model):
+    hbook = models.ForeignKey('BookInfo')#英雄与图书表的关系为一对多，所以属性定义在英雄模型类中
+```
+
+一对一关联
+
+```python
+class Place(models.Model):
+    pass
+class Restaurant(models.Model):
+    place = models.OneToOneField(Place, on_delete=models.CASCADE,primary_key=True)
+
+```
+
+多对多关联
+
+```python
+class TypeInfo(models.Model):
+	pass
+class NewsInfo(models.Model):
+  ntype = models.ManyToManyField('TypeInfo')
+```
+
+自关联
+
+```python
+class AreaInfo(models.Model):
+    atitle=models.CharField(max_length=30)#名称
+    aParent=models.ForeignKey('self',null=True,blank=True)#关系
+```
+
 ## QuerySets
 
 **查询最后一条记录 返回model对象**
@@ -170,6 +209,7 @@ str(Role.objects.values_list("id", "name").query)
 from django.core import serializers
 serialized_obj = serializers.serialize('json', [user, ])
 ```
+
 
 
 

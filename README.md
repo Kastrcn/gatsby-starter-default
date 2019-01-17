@@ -8,4 +8,5 @@
 *  添加QuerySet
 *  安装djangorestframework
 *  使用vue框架进行前端渲染
+*  添加django 表关系
 ----------------
