@@ -12,7 +12,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import SEO from '../components/seo'
-import {Link} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 
 const drawerWidth = 240;
 
@@ -124,3 +124,28 @@ class layout extends React.Component {
 
 
 export default withStyles(styles)(layout);
+
+
+
+export const query = graphql`
+  query {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/gatsby//"}}, sort: {fields: [fileAbsolutePath]}) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          _PARENT
+        }
+        fileAbsolutePath
+        fields {
+          slug
+        }
+        excerpt
+      }
+    }
+  }
+}
+`
