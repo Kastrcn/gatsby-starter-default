@@ -58,3 +58,20 @@ https://github.com/Kastrcn/python_exercise
    - [x] 百度翻译
    - [x] 糗事百科多线程
    - [x] 云打码
+   
+4. scrapy
+
+   - [ ] pipeline 两种方式 多个类 或者if
+   - [ ] logging
+   - [ ] 构造函数
+   - [ ] item
+   - [ ] debug
+   - [ ] scrapy shell
+   - [ ] scrapy settings
+   - [ ] crawlspdier
+   - [ ] downloadmiddleware
+
+   - [ ] 登陆
+   - [ ] scrapy_redis
+   - [ ] crontab
+   
